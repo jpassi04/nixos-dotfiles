@@ -23,21 +23,6 @@
       xwayland.enable = true;
   };
 
-  services.ollama = {
-     enable = true;
-     package = pkgs.ollama-cuda;
-  };
-
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-  hardware.graphics.enable = true;
- 
-  hardware.nvidia = {
-     modesetting.enable = true;
-     open = false;
-  };
-
-  services.xserver.videoDrivers = [ "nvidia" ];
-
   users.users.julian = {
      isNormalUser = true;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
@@ -46,7 +31,9 @@
      ];
   };
 
-    hardware.cpu.amd.updateMicrocode = true;
+    hardware.cpu.intel.updateMicrocode = true;
+   
+    services.openssh.enable = true;
 
     nixpkgs.config.allowUnfree = true;
 
@@ -60,19 +47,6 @@
     fonts.packages = with pkgs; [
       nerd-fonts.jetbrains-mono
     ]; 
-
-    programs.nix-ld.enable = true;
-    programs.nix-ld.libraries = with pkgs; [
-        # Add common simulator libraries here if errors persist
-        libGL
-        libx11
-        libxcursor
-        libxrandr
-        libxinerama
-        libxi
-        glib
-    ];
- 
 
   programs.firefox.enable = true;
 

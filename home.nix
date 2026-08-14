@@ -22,13 +22,13 @@ in
     '';
   };
 
-  home.file.".config/hypr".source = config.lib.file.mkOutOfStoreSymlink /home/julian/nixos-dotfiles/config/hypr;
-  home.file.".config/rofi".source = config.lib.file.mkOutOfStoreSymlink /home/julian/nixos-dotfiles/config/rofi;
-  home.file.".config/wlogout".source = config.lib.file.mkOutOfStoreSymlink /home/julian/nixos-dotfiles/config/wlogout;
-  home.file.".config/waybar".source = config.lib.file.mkOutOfStoreSymlink /home/julian/nixos-dotfiles/config/waybar;
-  home.file.".config/yazi".source = config.lib.file.mkOutOfStoreSymlink /home/julian/nixos-dotfiles/config/yazi;
-  home.file.".config/ghostty".source = config.lib.file.mkOutOfStoreSymlink /home/julian/nixos-dotfiles/config/ghostty;
-  home.file.".config/swaync".source = config.lib.file.mkOutOfStoreSymlink /home/julian/nixos-dotfiles/config/swaync;
+  home.file.".config/hypr".source = ./config/hypr;
+  home.file.".config/rofi".source = ./config/rofi;
+  home.file.".config/wlogout".source = ./config/wlogout;
+  home.file.".config/waybar".source = ./config/waybar;
+  home.file.".config/yazi".source = ./config/yazi;
+  home.file.".config/ghostty".source = ./config/ghostty;
+  home.file.".config/swaync".source = ./config/swaync;
 
   home.pointerCursor = {
     enable = true;
